@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Profile Card",
+  "name": "Profile Card PWA",
   "icons": [
     {
       "src": "favicon.ico",
