@@ -1,24 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import Card from './components/ProfileCard/Card';
 
 function App() {
+  const [ profiles, setProfiles ] = useState([]);
+
+  const getData = () => {
+    fetch('player_profile_data__2_.json', {
+      headers : {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    }).then(function(response){
+        console.log(response)
+        return response.json();
+      })
+      .then(function(json){
+        setProfiles(json);
+      });
+  }
+
+  useEffect(() => {
+    setTimeout(() => {
+      getData()
+    }, 3000)
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Card profile={profiles ? profiles[0] : {}}></Card>
     </div>
   );
 }
