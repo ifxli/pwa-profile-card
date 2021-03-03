@@ -11,10 +11,11 @@ const Card = ({ profile }) => {
       <CardHeader profile={profile} />
       <div className="separator"></div>
       <div className="sg-graphs">
-        {profile.SGCategories.map(cat => {
-          return <SGCategoryBar category={cat} />
+        {profile.SGCategories.map((cat, id) => {
+          return <SGCategoryBar category={cat} key={id} />
         })}
       </div>
+      <div className="separator"></div>
     </div>
   ) : (
     <div className="profile-card skeleton-card">

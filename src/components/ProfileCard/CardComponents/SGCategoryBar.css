@@ -1,16 +1,18 @@
 .category-bar {
   display: flex;
   margin-top: 16px;
+  font-size: 14px;
+  color: #001521;
 }
 
 .sg-left {
   font-family: "Roboto-Regular";
-  font-size: 14px;
   margin-right: 8px;
+  width: 60px;
+  text-align: left;
 }
 
 .sg-right {
   font-family: "Roboto-Medium";
-  font-size: 14px;
   margin-left: 8px;
 }
